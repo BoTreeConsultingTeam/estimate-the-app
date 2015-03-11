@@ -8,3 +8,6 @@ development: &default
    password: root
    host: localhost
    socket: /var/run/mysqld/mysqld.sock
+
+production:
+     <<: *default
