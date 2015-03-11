@@ -1,0 +1,85 @@
+<div class="container" ng-controller="homeController">
+
+<!-- header-logo-navigation view -->
+<div class="row">
+  <div class="col-lg-12">
+    <h3 class="text-center">Cost Estimator</h3>
+  </div>
+</div>
+<!-- /header-logo-navigation view -->
+
+<!-- Calculated Costs -->
+<div class="row">
+  <div class="col-lg-3">
+    <table class="table" id="right_hand">
+      <tr class="success">
+        <th>Cost Estimator says</th>
+        <th>Total</th>
+      </tr>
+      <tr class="success">
+        <td>Price :</td>
+        <td>{{ total_my }}</td>
+      </tr>
+      <tr class="success">
+        <td>Person Days :</td>
+        <td>{{ person_days_my }}</td>
+      </tr>
+      <tr class="success">
+        <td>Personnel :</td>
+        <td>{{ personnel_my }}</td>
+      </tr>
+    </table>
+  </div>
+</div>
+<!-- /Calculated Costs -->
+
+<!-- Other Costs -->
+<div class="row">
+  <div class="col-lg-3">
+    <table class="table" id="left_hand">
+      <tr class="warning">
+        <th>Others say</th>
+        <th>Total</th>
+      </tr>
+      <tr class="warning">
+        <td>Price :</td>
+        <td>{{ total_actual }}</td>
+      </tr>
+      <tr class="warning">
+        <td>Person Days :</td>
+        <td>{{ person_days_actual }}</td>
+      </tr>
+      <tr class="warning">
+        <td>Personnel :</td>
+        <td>{{ personnel_actual }}</td>
+      </tr>
+    </table>
+  </div>
+</div>
+<!-- /Other Costs -->
+
+<!-- body view -->
+<div class="row">
+  <div class="col-lg-12">
+    <div ng-repeat="question in questions">
+      <div class="row">
+        <div class="col-lg-6 col-lg-offset-3">
+          <div class="question-box mrgtop20">
+            <h4>{{ question.question }}</h4>
+            <div ng-repeat="option in question.options">
+              <div class="radio checkbox">
+                <label>
+                  <input type="{{question.type}}" value="{{option.value1}}" class="option_select" name="question_{{question.id}}" id="option_{{option.id}}" ng-click="calculateScore(question,option)">
+                  {{ option.text }}
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- /body view -->
+
+</div>

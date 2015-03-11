@@ -1,0 +1,10 @@
+development: &default
+   adapter: mysql2
+   encoding: utf8
+   reconnect: false
+   database: estimate_the_app_cost_calculator
+   pool: 5
+   username: root
+   password: root
+   host: localhost
+   socket: /var/run/mysqld/mysqld.sock
