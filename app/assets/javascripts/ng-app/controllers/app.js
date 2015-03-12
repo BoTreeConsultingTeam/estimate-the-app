@@ -1,5 +1,6 @@
 angular.module('myApp', [])
 	.controller('homeController', ['$scope','$http', function ($scope,$http) {
+
 		$http.get('assets/ng-app/connection.properties').then(function (response) {
 			// Initialize variables
 			$scope.questions = response.data
@@ -80,7 +81,3 @@ angular.module('myApp', [])
 			$scope.personnel_actual = $scope.personnel_actual + value["personnel1"]
 		}
 	}]);
-
-
-
-
